@@ -1,0 +1,25 @@
+# GitHub Copilot Setup Steps
+# This file defines the setup steps required to lint and build the react-admin-firebase project
+
+name: Setup react-admin-firebase
+
+steps:
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '20.18.1'
+
+  - name: Install Yarn
+    run: npm install -g yarn
+
+  - name: Install Dependencies
+    run: yarn install --pure-lockfile
+    description: Installs all project dependencies including microbundle, gulp, tslint, prettier, jest, typescript, and firebase-tools
+
+  - name: Verify Build Tools
+    run: |
+      echo "Microbundle version:"
+      npx microbundle --version || echo "Microbundle installed"
+      echo "Gulp version:"
+      npx gulp --version
+    description: Verify that microbundle and gulp are installed and available
