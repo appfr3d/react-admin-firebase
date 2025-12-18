@@ -1,4 +1,9 @@
-import { FireApp } from 'misc/firebase-models';
+import {
+  FireApp,
+  FireAuth,
+  FireStorage,
+  FireStore,
+} from 'misc/firebase-models';
 
 export interface RAFirebaseOptions {
   // Use a different root document to set your resource collections,
@@ -6,6 +11,12 @@ export interface RAFirebaseOptions {
   rootRef?: string | (() => string);
   // Your own, previously initialized firebase app instance
   app?: FireApp;
+  // Your own, previously initialized firestore instance
+  firestore?: FireStore;
+  // Your own, previously initialized storage instance
+  storage?: FireStorage;
+  // Your own, previously initialized auth instance
+  auth?: FireAuth;
   // Enable logging of react-admin-firebase
   logging?: boolean;
   // Resources to watch for realtime updates,
