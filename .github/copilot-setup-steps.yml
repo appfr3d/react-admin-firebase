@@ -13,13 +13,13 @@ steps:
     run: npm install -g yarn
 
   - name: Install Dependencies
-    run: yarn install --pure-lockfile
     description: Installs all project dependencies including microbundle, gulp, tslint, prettier, jest, typescript, and firebase-tools
+    run: yarn install --pure-lockfile
 
   - name: Verify Build Tools
+    description: Verify that microbundle and gulp are installed and available
     run: |
       echo "Microbundle version:"
       npx microbundle --version || echo "Microbundle installed"
       echo "Gulp version:"
       npx gulp --version
-    description: Verify that microbundle and gulp are installed and available
